@@ -35,6 +35,57 @@ a {
   text-decoration: none;
 }
 
+.menu-button {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(var(--secondary-color-rgb), 0.4);
+  border: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: unset;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.menu-button .menu-button-icon {
+  height: 3.5px;
+  width: 35px;
+  background: var(--text-color);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.menu-button .menu-button-icon::after, .menu-button .menu-button-icon::before {
+  position: absolute;
+  content: "";
+  height: 3.5px;
+  width: 40px;
+  background: var(--text-color);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.menu-button .menu-button-icon::before {
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
+}
+
+.menu-button .menu-button-icon::after {
+  width: 25px;
+  -webkit-transform: translateY(12px);
+          transform: translateY(12px);
+}
+
 body {
   background-image: repeating-linear-gradient(135deg, rgba(145, 145, 145, 0.02) 0px, rgba(145, 145, 145, 0.02) 39px, rgba(140, 140, 140, 0.02) 39px, rgba(140, 140, 140, 0.02) 57px, rgba(9, 9, 9, 0.02) 57px, rgba(9, 9, 9, 0.02) 91px, rgba(217, 217, 217, 0.02) 91px, rgba(217, 217, 217, 0.02) 119px, rgba(45, 45, 45, 0.02) 119px, rgba(45, 45, 45, 0.02) 141px, rgba(227, 227, 227, 0.02) 141px, rgba(227, 227, 227, 0.02) 184px, rgba(236, 236, 236, 0.02) 184px, rgba(236, 236, 236, 0.02) 227px, rgba(124, 124, 124, 0.02) 227px, rgba(124, 124, 124, 0.02) 244px), repeating-linear-gradient(135deg, rgba(39, 39, 39, 0.02) 0px, rgba(39, 39, 39, 0.02) 23px, rgba(2, 2, 2, 0.02) 23px, rgba(2, 2, 2, 0.02) 55px, rgba(13, 13, 13, 0.02) 55px, rgba(13, 13, 13, 0.02) 71px, rgba(44, 44, 44, 0.02) 71px, rgba(44, 44, 44, 0.02) 98px, rgba(240, 240, 240, 0.02) 98px, rgba(240, 240, 240, 0.02) 134px, rgba(182, 182, 182, 0.02) 134px, rgba(182, 182, 182, 0.02) 159px, rgba(246, 246, 246, 0.02) 159px, rgba(246, 246, 246, 0.02) 174px, rgba(157, 157, 157, 0.02) 174px, rgba(157, 157, 157, 0.02) 190px), repeating-linear-gradient(135deg, rgba(145, 145, 145, 0.02) 0px, rgba(145, 145, 145, 0.02) 35px, rgba(217, 217, 217, 0.02) 35px, rgba(217, 217, 217, 0.02) 53px, rgba(199, 199, 199, 0.02) 53px, rgba(199, 199, 199, 0.02) 70px, rgba(196, 196, 196, 0.02) 70px, rgba(196, 196, 196, 0.02) 114px, rgba(137, 137, 137, 0.02) 114px, rgba(137, 137, 137, 0.02) 143px, rgba(249, 249, 249, 0.02) 143px, rgba(249, 249, 249, 0.02) 191px, rgba(247, 247, 247, 0.02) 191px, rgba(247, 247, 247, 0.02) 239px, rgba(38, 38, 38, 0.02) 239px, rgba(38, 38, 38, 0.02) 273px), linear-gradient(135deg, var(--primary-color), var(--primary-color) 100%);
   background-attachment: fixed;
@@ -52,14 +103,20 @@ header {
 nav {
   width: 100%;
   padding: 1rem 1.5rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 20% 80%;
-      grid-template-columns: 20% 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(var(--secondary-color-rgb), 0.2);
+}
+
+nav .menu-button {
+  display: none;
 }
 
 nav .brand {
@@ -79,7 +136,7 @@ nav ul {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-right: 30rem;
+  margin-right: 20rem;
   margin-bottom: 0rem;
 }
 
@@ -173,5 +230,56 @@ nav ul li a:hover {
   padding: 2rem;
   padding-bottom: 3rem;
   font-size: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  nav .menu-button {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  nav.open {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: var(--primary-color);
+  }
+  nav.open .menu-button .menu-button-icon {
+    background: transparent;
+  }
+  nav.open .menu-button .menu-button-icon::before {
+    width: 40px;
+    height: 3.5px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  nav.open .menu-button .menu-button-icon::after {
+    width: 40px;
+    height: 3.5px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  nav.open .brand, nav.open .menu-button {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  nav.open ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0;
+  }
+  nav.open ul li {
+    margin-bottom: 4rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

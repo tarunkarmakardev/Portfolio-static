@@ -1,0 +1,32 @@
+@include media(lg){
+    nav{
+       
+        .menu-button {
+            display: block;
+        }
+        ul{
+            display: none;
+        }
+
+        &.open {
+            height: 100vh;
+            display: flex;
+            background-color: $primary-color;
+            @include menu-button-open(); 
+            .brand, .menu-button{
+                align-self: flex-start;
+            } 
+            
+            ul{ 
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin:0;
+                li{
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+
+    }
+}

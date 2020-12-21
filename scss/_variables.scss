@@ -25,18 +25,6 @@ $font-primary: 'Titillium Web', sans-serif;
 
 }
 
-$primary-color: var(--primary-color);
-$primary-color-rgb: var(--primary-color-rgb);
-
-$secondary-color: var(--secondary-color);
-$secondary-color-rgb: var(--secondary-color-rgb);
-
-$accent-color: var(--accent-color);
-$accent-color-rgb: var(--accent-color-rgb);
-
-$text-color: var(--text-color);
-$text-color-rgb: var(--text-color-rgb);
-
 
 // Light theme
 
@@ -57,3 +45,16 @@ $text-color-rgb: var(--text-color-rgb);
 }
 
 
+// SASS variables:
+
+$primary-color: var(--primary-color);
+$primary-color-rgb: var(--primary-color-rgb);
+
+$secondary-color: var(--secondary-color);
+$secondary-color-rgb: var(--secondary-color-rgb);
+
+$accent-color: var(--accent-color);
+$accent-color-rgb: var(--accent-color-rgb);
+
+$text-color: var(--text-color);
+$text-color-rgb: var(--text-color-rgb);

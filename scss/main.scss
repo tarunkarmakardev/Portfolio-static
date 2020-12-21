@@ -3,6 +3,9 @@
 @import './config';
 @import './utilities';
 @import './media-queries';
+@import './menu';
+@import './animation';
+
 
 // Body background and general styles
 
@@ -24,11 +27,14 @@ header{
 // Navbar
 
 nav {
+    .menu-button{
+        display: none;
+    }
     
     width: 100%; 
     padding: 1rem 1.5rem;
-    display: grid;
-    grid-template-columns: 20% 80%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: rgba($secondary-color-rgb, 0.2);
 
@@ -44,7 +50,7 @@ nav {
         align-items: center;
         justify-content: flex-end;
         
-        margin-right: 30rem;
+        margin-right: 20rem;
         margin-bottom: 0rem;
 
         li{
@@ -95,10 +101,13 @@ nav {
    
 }
 
+// Section global Styling
 .section-title-text{
 
     border-bottom: 4px solid $accent-color;
 }
+
+// Skills section styling
 
 .skills-content {
     display: flex;
@@ -134,3 +143,12 @@ nav {
 
 }
 
+
+
+
+
+
+
+// Media queries
+
+@import './responsive'
