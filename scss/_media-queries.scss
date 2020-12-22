@@ -29,6 +29,12 @@
         }
 
     }
+
+    @if($device==xs){
+        @media (max-width: 320px){
+            @content;
+        }
+    }
    
 }
 

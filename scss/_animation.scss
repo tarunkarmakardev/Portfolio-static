@@ -1,5 +1,13 @@
-@mixin transition($duration) {
+@mixin transition($duration, $func:ease) {
 
-    transition: all #{$duration}s;
+    transition: all #{$duration}s #{$func};
     
+}
+
+@mixin button-transition($duration) {
+    transform: scale(1);
+    transition: all #{$duration}s ease-in-out;
+    &:hover{
+        transform: scale(0.95);
+    }
 }

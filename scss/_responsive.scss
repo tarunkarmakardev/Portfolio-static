@@ -1,6 +1,5 @@
 @include media(lg){
     nav{
-       
         .menu-button {
             display: block;
         }
@@ -9,7 +8,9 @@
         }
 
         &.open {
-            height: 100vh;
+            // position: fixed;
+            min-height: 100vh;
+            max-height: 100%;
             display: flex;
             background-color: $primary-color;
             @include menu-button-open(); 
@@ -28,5 +29,63 @@
             }
         }
 
+    }
+
+    
+}
+
+@include media(sm){
+    .form-content .form-content-card .contact-form{
+        grid-template-columns: 1fr;
+        .form-row{
+                        
+            &:nth-child(3), &:nth-child(4){
+                grid-column: 1;
+            }
+        }
+
+        // display: none;
+    }
+
+    .hero .hero-content{
+
+        #hero-content-title{
+            font-size: 1.5rem;
+        }
+
+        #hero-content-subtitle{
+            font-size: 1.2rem;
+        }
+
+        
+    }
+
+    .projects-content .projects-content-card {
+        
+        .projects-content-card-title{
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .projects-content-card-des {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    }
+
+}
+
+@include media(xs){
+    .hero .hero-content{
+
+        #hero-content-title{
+            font-size: 1.2rem;
+        }
+
+        #hero-content-subtitle{
+            font-size: 1rem;
+        }
+
+        
     }
 }
