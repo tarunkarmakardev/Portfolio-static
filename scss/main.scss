@@ -305,6 +305,7 @@ section{
 footer{
     height: 20vh;
     background-color: $primary-color;
+    
 
     .container-fluid{
         @include display-flex($flex-direction:column, $justify-content:space-between);
@@ -326,6 +327,24 @@ footer{
 
     
 }
+
+// Thank you message page:
+
+section.success-message{
+    min-height: 80vh;
+    @include display-flex($flex-direction:column, $justify-content: center);
+}
+
+@include card(success-message-content){
+    min-height: 400px;
+    min-width: 800px;
+    padding: 4rem;
+    font-size: 1.5rem;
+
+    @include button-accent;
+   
+}
+
 
 
 
