@@ -47,8 +47,13 @@ formInput.focus(function () {
 
 formInput.blur(function () {
     if ($(this).attr("type") != "submit") {
-        $(this).parents('.form-row').toggleClass('focused');
-        if ($(this).is("textarea")) {
+
+        if (!$(this).val()) {
+            $(this).parents('.form-row').toggleClass('focused');
+        }
+
+
+        if ($(this).is("textarea") && !$(this).val()) {
             $(this).attr("rows", "10");
             $(this).prev("label").css("transform", "translateY(0)");
         }
