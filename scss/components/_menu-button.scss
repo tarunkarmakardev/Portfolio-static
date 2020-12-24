@@ -19,7 +19,7 @@
             height: 3.5px;
             width: 35px;
             background: $text-color;
-            @include transition(0.6);
+            @include transition(1.2);
 
             &::after, &::before{
                 position: absolute;
@@ -27,7 +27,7 @@
                 height: 3.5px;
                 width: 40px;
                 background: $text-color;  
-                @include transition(0.6);              
+                @include transition(1.2);              
             }
 
             &::before{

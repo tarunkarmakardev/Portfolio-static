@@ -1,4 +1,4 @@
-@mixin transition($duration, $func:ease) {
+@mixin transition($duration:1, $func:ease) {
 
     transition: all #{$duration}s #{$func};
     
@@ -11,3 +11,4 @@
         transform: scale(0.95);
     }
 }
+

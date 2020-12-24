@@ -17,6 +17,7 @@
 @import './components/card';
 @import './components/menu-button';
 @import './components/button';
+@import './components/toggle_button';
 
 
 // Animations
@@ -34,23 +35,37 @@ body{
     font-family: $font-primary;
     color: $text-color;
     word-spacing: 5px;
+    
 }
 
+// body *{
+//     transition: all 10s ease-in-out;
+// }
+
 // Navbar
+
+header{
+    z-index: 1000;
+}
 
 nav {
     .menu-button{
         display: none;
     }
-    
+        
     width: 100%; 
+    height: auto;
     padding: 1rem 1.5rem;
     @include display-flex($justify-content:space-between);
-    background-color: rgba($secondary-color-rgb, 0.2);
+    background-color: rgba($secondary-color-rgb, 0.5);
 
     .brand{
         font-family: $font-logo;
         font-size: 1.6rem;
+    }
+
+    .toggle{
+        margin-left: 100px;
     }
 
     ul {
@@ -58,7 +73,7 @@ nav {
         font-size: 0.9rem;
         @include display-flex($justify-content: flex-end);
         
-        margin-right: 20rem;
+        margin-right: 5rem;
         margin-bottom: 0rem;
 
         li{
@@ -66,7 +81,7 @@ nav {
             word-spacing: 5px;
             a{
                 height: 100%;
-                padding: 1.5rem 1.5rem;
+                padding: 1.8rem 1.5rem;
                 margin-right: 0rem;
                 color: $text-color;
                 text-transform: uppercase;
@@ -85,6 +100,10 @@ nav {
         }
 
     }
+}
+
+section{
+    min-height: 1000px;
 }
 
 // Hero section
@@ -112,12 +131,12 @@ nav {
    
 }
 
+
 // Section global Styling
 
 // Title
 
 .section-title-text{
-
     border-bottom: 4px solid $accent-color;
 }
 
@@ -160,6 +179,7 @@ nav {
 @include card(projects-content){
 
     max-width: 400px;
+    margin: 4rem 4rem;
 
     img {
         width: 100%;
@@ -183,7 +203,14 @@ nav {
 
 // Resume download section:
 
+.section.resume{
+    @include display-flex($flex-direction:column);
+}
+
 @include card(resume-content){
+    min-height: 200px;
+    min-width: 200px;
+    padding: 4rem;
     i {
         font-size: 4.5rem;
         
@@ -197,6 +224,7 @@ nav {
 
 @include card(form-content){
     max-width: auto;
+    padding: 3rem;
     @include transition(4);
     .contact-form{
         display: grid;
@@ -294,6 +322,7 @@ footer{
 
     
 }
+
 
 
 // Media queries
